@@ -4,7 +4,7 @@
     $connection = $obj->connect();
 
     // Necesario para recibir parametros con Axios
-    $_POST = json_decode(file_get_contents(""), true);
+    $_POST = json_decode(file_get_contents("php://input"), true);
 
     // Recepcion de los datos enviados mediante POST desde main.js
     $option = (isset($_POST['option'])) ? $_POST['option'] : '';
@@ -40,5 +40,5 @@
     }
 
     // Envira el array final en formato json a JS
-    print json_decode($data, JSON_UNESCAPED_UNICODE);
+    print json_encode($data, JSON_UNESCAPED_UNICODE);
     $connection = NULL;

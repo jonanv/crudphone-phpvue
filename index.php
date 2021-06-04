@@ -64,7 +64,7 @@
                                     <div class="btn-group" role="group">
                                         <button class="btn btn-secondary"
                                             title="Editar"
-                                            @click="btnUpdate(phone.id, phone.marca, phone.modelo, phone.stock)">
+                                            @click="btnUpdate(phone.id, phone.brand, phone.model, phone.stock)">
                                             <i class="fas fa-pencil-alt"></i>    
                                         </button>
                                         <button class="btn btn-danger"

@@ -1,3 +1,4 @@
+var url = 'config/crud.php';
 var app = new Vue({
     el: '#app',
     data: {
@@ -9,6 +10,7 @@ var app = new Vue({
         totalStock: 0
     },
     methods: {
+        // Botones
         btnCreate: async function() {
             const { value: formValues } = await Swal.fire({
                 title: 'NUEVO',
@@ -128,7 +130,17 @@ var app = new Vue({
                     }
                 });
         },
+        // Procesimientos
+        listPhones: function() {
+            axios.post(url, {option: 4})
+                .then(response => {
+                    console.log(response);
+                    this.phones = response.data;
+                });
+        }
     },
-    created: function() {},
+    created: function() {
+        this.listPhones();
+    },
     computed: {}
 });
