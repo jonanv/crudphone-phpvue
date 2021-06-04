@@ -55,7 +55,7 @@
                                 <td>
                                     <div class="col-md-8">
                                         <input type="number" 
-                                            v-model.number="movil.stock" 
+                                            v-model.number="phone.stock" 
                                             class="form-control text-right" 
                                             disabled>
                                     </div>
@@ -64,12 +64,12 @@
                                     <div class="btn-group" role="group">
                                         <button class="btn btn-secondary"
                                             title="Editar"
-                                            @click="btnUpdate(movil.id, movil.marca, movil.modelo, movil.stock)">
+                                            @click="btnUpdate(phone.id, phone.marca, phone.modelo, phone.stock)">
                                             <i class="fas fa-pencil-alt"></i>    
                                         </button>
                                         <button class="btn btn-danger"
                                             title="Eliminar"
-                                            @click="btnDelete(movil.id)">
+                                            @click="btnDelete(phone.id)">
                                             <i class="fas fa-trash-alt"></i>    
                                         </button>
                                     </div>
