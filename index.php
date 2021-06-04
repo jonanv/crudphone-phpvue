@@ -16,7 +16,71 @@
     <link rel="stylesheet" href="./public/css/style.css">
 </head>
 <body>
-    <h1>crudphone</h1>
+    <header>
+        <h2 class="text-center text-dark">
+            <span class="badge badge-success">CRUD con VUE.JS</span>
+        </h2>
+    </header>
+
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <button type="" @click="btnCreate();" class="btn btn btn-success" title="Crear">
+                        <i class="fas fa-plus-circle fa-2x"></i>
+                    </button>
+                </div>
+                <div class="col text-right">
+                    <h5>Stock total: <span class="badge badge-success">{{ totalStock }}</span></h5>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Stock</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(phone, indice) in phones">
+                                <td>{{ phone.id }}</td>
+                                <td>{{ phone.brand }}</td>
+                                <td>{{ phone.model }}</td>
+                                <td>
+                                    <div class="col-md-8">
+                                        <input type="number" 
+                                            v-model.number="movil.stock" 
+                                            class="form-control text-right" 
+                                            disabled>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <button class="btn btn-secondary"
+                                            title="Editar"
+                                            @click="btnUpdate(movil.id, movil.marca, movil.modelo, movil.stock)">
+                                            <i class="fas fa-pencil-alt"></i>    
+                                        </button>
+                                        <button class="btn btn-danger"
+                                            title="Eliminar"
+                                            @click="btnDelete(movil.id)">
+                                            <i class="fas fa-trash-alt"></i>    
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery, Popper JS, Bootstrap JS -->
     <script src="./public/libs/jquery/jquery-3.6.0.min.js"></script>
