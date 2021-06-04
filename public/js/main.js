@@ -5,7 +5,7 @@ var app = new Vue({
         phones: [],
         marca: '',
         model: '',
-        stock: 0,
+        stock: '',
         total: 0
     },
     methods: {
@@ -68,7 +68,7 @@ var app = new Vue({
               }
         },
         btnUpdate: async function(id, brand, model, stock) {
-            const { value: formValues } = await Swal.fire({
+            await Swal.fire({
                 title: 'EDITAR',
                 html:
                     '<div class="row">' +
@@ -135,7 +135,7 @@ var app = new Vue({
         listPhones: function() {
             axios.post(url, {option: 4})
                 .then(response => {
-                    console.log(response);
+                    // console.log(response);
                     this.phones = response.data;
                 });
         },
@@ -143,7 +143,7 @@ var app = new Vue({
         createPhone: function() {
             axios.post(url, {option: 1, brand:this.brand, model:this.model, stock:this.stock})
                 .then(response => {
-                    console.log(response);
+                    // console.log(response);
                     this.listPhones();
                 });
                 this.brand = '';
@@ -154,7 +154,7 @@ var app = new Vue({
         updatePhone: function(id, brand, model, stock) {
             axios.post(url, {option: 2, id:id, brand:brand, model:model, stock:stock})
                 .then(response => {
-                    console.log(response);
+                    // console.log(response);
                     this.listPhones();
                 });
         },
@@ -162,7 +162,7 @@ var app = new Vue({
         deletePhone: function(id) {
             axios.post(url, {option: 3, id:id})
                 .then(response => {
-                    console.log(response);
+                    // console.log(response);
                     this.listPhones();
                 });
         }
