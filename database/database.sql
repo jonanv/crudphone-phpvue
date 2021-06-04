@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 04-06-2021 a las 06:17:56
+-- Tiempo de generación: 04-06-2021 a las 17:02:31
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.33
 
@@ -33,7 +33,8 @@ CREATE TABLE `phone` (
 
 INSERT INTO `phone` (`id`, `brand`, `model`, `stock`) VALUES
 (1, 'Samsumg', 'J7 prime', 10),
-(2, 'Xiaomi', 'Mi 9 SE', 12);
+(2, 'Xiaomi', 'Mi 9 SE', 12),
+(3, 'Apple', 'iPhone 8 Plus', 15);
 
 --
 -- Índices para tablas volcadas
@@ -53,4 +54,4 @@ ALTER TABLE `phone`
 -- AUTO_INCREMENT de la tabla `phone`
 --
 ALTER TABLE `phone`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
