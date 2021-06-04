@@ -3,7 +3,7 @@ var app = new Vue({
     el: '#app',
     data: {
         phones: [],
-        marca: '',
+        brand: '',
         model: '',
         stock: '',
         total: 0
