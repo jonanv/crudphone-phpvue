@@ -90,7 +90,8 @@ var app = new Vue({
                     '</div>',
                 focusConfirm: false,
                 showCancelButton: true,
-                }).then((result) => {
+            })
+            .then((result) => {
                     if (result) {
                         brand = document.getElementById('brand').value,
                         model = document.getElementById('model').value,
@@ -106,8 +107,27 @@ var app = new Vue({
                     }
                 });
         },
-        btnDelete: async function(id) {},
-        
+        btnDelete: function(id) {
+            Swal.fire({
+                title: '¿Estas seguo de borrar el registro: ' + id + '?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Borrar'
+            })
+            .then((result) => {
+                    if (result.value) {
+                        this.deletePhone(id);
+                        Swal.fire({
+                            title: '!Eliminado!',
+                            text: '!El registro ha sido borrado!',
+                            icon: 'success',
+                            confirmButtonColor: '#3085d6',
+                        });
+                    }
+                });
+        },
     },
     created: function() {},
     computed: {}
